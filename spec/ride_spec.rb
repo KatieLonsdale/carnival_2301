@@ -80,6 +80,11 @@ RSpec.describe Ride do
 
       expect(@visitor1.spending_money).to eq 9
       expect(@ride1.total_revenue).to eq 1
+
+      @ride1.take_admission_from_rider(@visitor2)
+
+      expect(@visitor2.spending_money).to eq 4
+      expect(@ride1.total_revenue).to eq 2
     end
   end
 
