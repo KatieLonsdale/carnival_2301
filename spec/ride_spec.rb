@@ -76,8 +76,6 @@ RSpec.describe Ride do
 
   describe '#take_admission_from_rider' do
     it 'takes money from given rider and adds it to ride revenue' do
-      @visitor1.add_preference(:gentle)
-      @ride1.board_rider(@visitor1)
       @ride1.take_admission_from_rider(@visitor1)
 
       expect(@visitor1.spending_money).to eq 9
