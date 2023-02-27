@@ -84,7 +84,7 @@ RSpec.describe Carnival do
       @ride2.board_rider(@visitor2)
       @ride3.board_rider(@visitor2)
 
-      expect(@carnival.most_profitable_ride).to eq(@ride 2)
+      expect(@carnival.most_profitable_ride).to eq(@ride2)
     end
   end
 end
