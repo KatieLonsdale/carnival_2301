@@ -17,15 +17,10 @@ class Ride
 
   def board_rider(rider)
   # add helper methods for extra logic
-    unless meet_requirements?(rider)
+    unless !meet_requirements?(rider)
       rider.spending_money = rider.spending_money - @admission_fee
       @total_revenue += @admission_fee
-      # terenary
-      if @rider_log.has_key?(rider)
-        @rider_log[rider] += 1
-      else
-        @rider_log[rider] = 1
-      end
+      @rider_log.has_key?(rider) ? @rider_log[rider] += 1 : @rider_log[rider] = 1
     end
   end
 
