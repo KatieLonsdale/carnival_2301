@@ -4,6 +4,7 @@ class Carnival
   def initialize(duration)
     @duration = duration
     @rides = []
+    # @@revenue_from_carnivals = 0
   end
 
   def add_ride(ride)
@@ -25,4 +26,11 @@ class Carnival
   def total_revenue_from_rides
     @rides.map{|ride| ride.total_revenue}.sum
   end
+
+  # def self.total_revenue_from_carnivals
+  #   ObjectSpace.each_object(Carnival) do |carnival|
+  #     @@revenue_from_carnivals += carnival.total_revenue_from_rides
+  #   end
+  #   @@revenue_from_carnivals
+  # end
 end
