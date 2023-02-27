@@ -9,4 +9,12 @@ class Carnival
   def add_ride(ride)
     @rides << ride
   end
+
+  def most_popular_ride
+    riders_per_ride = {}
+    @rides.map do |ride|
+      riders_per_ride[ride] = ride.rider_log.values.sum
+    end
+    riders_per_ride.sort_by{|ride, riders| riders}.last.first
+  end
 end
