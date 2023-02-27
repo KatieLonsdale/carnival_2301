@@ -14,4 +14,12 @@ class Ride
   @total_revenue = 0
   @rider_log = {}
  end
+
+ def board_rider(rider)
+  if @rider_log.has_key?(rider)
+    @rider_log[rider] += 1
+  else
+    @rider_log[rider] = 1
+  end
+ end
 end
