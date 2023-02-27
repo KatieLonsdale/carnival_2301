@@ -30,8 +30,8 @@ RSpec.describe Carnival do
     @visitor2.add_preference(:gentle)
     @visitor3.add_preference(:gentle)
     @visitor1.add_preference(:thrilling)
-    @visitor1.add_preference(:thrilling)
-    @visitor1.add_preference(:thrilling)
+    @visitor2.add_preference(:thrilling)
+    @visitor3.add_preference(:thrilling)
   end
 
   describe '#initialize' do
