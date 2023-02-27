@@ -28,14 +28,19 @@ RSpec.describe Ride do
   end
 
   describe '#board_rider' do
-    it 'adds visitor ride to rider log' do
+    before(:each) do
       @visitor1.add_preference(:gentle)
       @visitor2.add_preference(:gentle)
-      @ride1.board_rider(visitor1)
-      @ride1.board_rider(visitor2)
-      @ride1.board_rider(visitor1)
-      
+      @ride1.board_rider(@visitor1)
+      @ride1.board_rider(@visitor2)
+      @ride1.board_rider(@visitor1)
+    end
+    it 'adds visitor ride to rider log' do
       expect(@ride1.rider_log).to eq({@visitor1 => 2, @visitor2 => 1})
+    end
+    it 'subtracts admission fee from rider spending money' do
+      expect(@visitor1.spending_money).to eq 8
+      expect(@visitor2.spending_money).to eq 4
     end
   end
 end
