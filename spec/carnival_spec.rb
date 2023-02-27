@@ -103,6 +103,42 @@ RSpec.describe Carnival do
 
       expect(@carnival.total_revenue_from_rides).to eq 15
     end
-
   end
+
+  # describe '#carnival_summary' do
+  #   it 'returns summary of visitor and revenue related info' do
+
+  #   end
+  # end
+
+  # describe '#total_revenue_from_carnivals' do
+  #   it 'returns total revenue earned from all carnivals' do
+  #     @carnival1 = Carnival.new('3 days')
+  #     @carnival2 = Carnival.new('2 days')
+  #     @carnival3 = Carnival.new('7 days')
+  #     @carnival1.add_ride(@ride1)
+  #     @carnival1.add_ride(@ride2)
+  #     @carnival1.add_ride(@ride3)
+  #     @ride1.board_rider(@visitor1)
+  #     @ride1.board_rider(@visitor2)
+  #     @ride1.board_rider(@visitor3)
+  #     @ride2.board_rider(@visitor1)
+  #     @ride2.board_rider(@visitor2)
+  #     @ride3.board_rider(@visitor2)
+  #     # 15
+
+  #     @carnival2.add_ride(@ride1)
+  #     @ride1.board_rider(@visitor1)
+  #     @ride1.board_rider(@visitor2)
+  #     @ride1.board_rider(@visitor3)
+  #     # 3
+
+  #     @carnival3.add_ride(@ride2)
+  #     @ride2.board_rider(@visitor1)
+  #     @ride2.board_rider(@visitor2)
+  #     # 10
+
+  #     expect(Carnival.total_revenue_from_carnivals).to eq 28
+  #   end
+  # end
 end
