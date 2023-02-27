@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe do 
+RSpec.describe Visitor do 
   before(:each) do
     @visitor1 = Visitor.new('Bruce', 54, '$10')
     @visitor2 = Visitor.new('Tucker', 36, '$5')
