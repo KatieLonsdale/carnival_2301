@@ -8,4 +8,8 @@ class Visitor
     # add helper method
     @preferences = []
   end
+
+  def add_preference(preference)
+    @preferences << preference
+  end
 end
