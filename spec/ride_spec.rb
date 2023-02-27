@@ -74,6 +74,17 @@ RSpec.describe Ride do
     end
   end
 
+  describe '#take_admission_from_rider' do
+    it 'takes money from given rider and adds it to ride revenue' do
+      @visitor1.add_preference(:gentle)
+      @ride1.board_rider(@visitor1)
+      @ride1.take_admission_from_rider(@visitor1)
+
+      expect(@visitor1.spending_money).to eq 9
+      expect(@ride1.total_revenue).to eq 1
+    end
+  end
+
   describe '#meet_requirements?' do
     it 'determines if rider meets height requirement' do
       @visitor2.add_preference(:thrilling)
