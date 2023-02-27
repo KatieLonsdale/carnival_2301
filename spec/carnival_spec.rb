@@ -10,5 +10,8 @@ RSpec.describe Carnival do
       expect(@carnival).to be_a Carnival
       expect(@carnival.duration).to eq('3 hours')
     end
+    it 'has an empty array of rides by default' do
+      expect(@carnival.rides).to eq([])
+    end
   end
 end
