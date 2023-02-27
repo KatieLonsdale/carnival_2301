@@ -55,7 +55,7 @@ RSpec.describe Carnival do
   end
 
   describe '#most_popular_ride' do
-    it 'returns most popular ride' do
+    it 'returns ride with most riders' do
       @carnival.add_ride(@ride1)
       @carnival.add_ride(@ride2)
       @carnival.add_ride(@ride3)
@@ -68,6 +68,23 @@ RSpec.describe Carnival do
       @ride3.board_rider(@visitor2)
 
       expect(@carnival.most_popular_ride).to eq(@ride1)
+    end
+  end
+
+  describe '#most_profitable_ride' do
+    it 'returns the ride with highest total revenue' do
+      @carnival.add_ride(@ride1)
+      @carnival.add_ride(@ride2)
+      @carnival.add_ride(@ride3)
+
+      @ride1.board_rider(@visitor1)
+      @ride1.board_rider(@visitor2)
+      @ride1.board_rider(@visitor3)
+      @ride2.board_rider(@visitor1)
+      @ride2.board_rider(@visitor2)
+      @ride3.board_rider(@visitor2)
+
+      expect(@carnival.most_profitable_ride).to eq(@ride 2)
     end
   end
 end
