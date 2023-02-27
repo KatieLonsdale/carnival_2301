@@ -17,6 +17,7 @@ class Ride
 
  def board_rider(rider)
   rider.spending_money = rider.spending_money - @admission_fee
+  @total_revenue += @admission_fee
   if @rider_log.has_key?(rider)
     @rider_log[rider] += 1
   else
