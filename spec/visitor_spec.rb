@@ -19,6 +19,15 @@ RSpec.describe Visitor do
     end
   end
 
+  describe '#format_spending_money' do
+    it 'turns spending money input into integer' do
+      expect(@visitor1.format_spending_money('$10')).to eq 10
+      expect(@visitor1.format_spending_money('7')).to eq 7
+      expect(@visitor1.format_spending_money('5$')).to eq 5
+      expect(@visitor1.format_spending_money('$14.00')).to eq 14
+    end
+  end
+
   describe '#add_preference' do
     it 'adds given preference to preferences array' do
       @visitor1.add_preference(:gentle)
