@@ -17,10 +17,14 @@ class Ride
 
   def board_rider(rider)
     unless !meet_requirements?(rider)
-      rider.spending_money -= @admission_fee
-      @total_revenue += @admission_fee
+      take_admission_from_rider(rider)
       @rider_log[rider] += 1
     end
+  end
+
+  def take_admission_from_rider(rider)
+    rider.spending_money -= @admission_fee
+    @total_revenue += @admission_fee
   end
 
   def meet_requirements?(rider)
