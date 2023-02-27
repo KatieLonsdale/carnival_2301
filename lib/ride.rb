@@ -12,15 +12,14 @@ class Ride
   @admission_fee = ride_info[:admission_fee]
   @excitement = ride_info[:excitement]
   @total_revenue = 0
-  @rider_log = {}
+  @rider_log = Hash.new{|h,k| h[k] = 0}
  end
 
   def board_rider(rider)
-  # add helper methods for extra logic
     unless !meet_requirements?(rider)
       rider.spending_money = rider.spending_money - @admission_fee
       @total_revenue += @admission_fee
-      @rider_log.has_key?(rider) ? @rider_log[rider] += 1 : @rider_log[rider] = 1
+      @rider_log[rider] += 1
     end
   end
 
