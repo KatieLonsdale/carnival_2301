@@ -77,16 +77,21 @@ RSpec.describe Ride do
   describe '#meet_requirements?' do
     it 'determines if rider meets height requirement' do
       @visitor2.add_preference(:thrilling)
+      @visitor1.add_preference(:thrilling)
       expect(@ride3.meet_requirements?(@visitor2)).to be false
+      expect(@ride3.meet_requirements?(@visitor1)).to be true
     end
     it 'determines if rider meets money requirement' do
       @visitor4 = Visitor.new('Katie', 54, '$1')
       @visitor4.add_preference(:gentle)
+      @visitor2.add_preference(:gentle)
       expect(@ride2.meet_requirements?(@visitor4)).to be false
+      expect(@ride2.meet_requirements?(@visitor2)).to be true
     end
     it 'determines if rider meets preference requirement' do
       expect(@ride1.meet_requirements?(@visitor1)).to be false
+      @visitor1.add_preference(:gentle)
+      expect(@ride1.meet_requirements?(@visitor1)).to be true
     end
-    # add for true conditions
   end
 end
