@@ -17,4 +17,8 @@ class Carnival
     end
     riders_per_ride.sort_by{|ride, riders| riders}.last.first
   end
+
+  def most_profitable_ride
+    @rides.sort_by{|ride| ride.total_revenue}.last
+  end
 end
