@@ -61,7 +61,7 @@ RSpec.describe Ride do
     it 'adds admission fee to ride total revenue' do
       expect(@ride1.total_revenue).to eq 3
     end
-    xit 'does not board rider unless they meet requirements' do
+    it 'does not board rider unless they meet requirements' do
       @ride3.board_rider(@visitor1)
       @ride3.board_rider(@visitor2)
       @ride3.board_rider(@visitor3)
@@ -71,6 +71,7 @@ RSpec.describe Ride do
       expect(@visitor3.spending_money).to eq 13
       expect(@ride3.rider_log).to eq({@visitor3 =>1})
       expect(@ride3.total_revenue).to eq 2
+      expect(@ride3.rider_log).to eq({@visitor3 => 1})
     end
   end
 
@@ -85,7 +86,8 @@ RSpec.describe Ride do
       expect(@ride2.meet_requirements?(@visitor4)).to be false
     end
     it 'determines if rider meets preference requirement' do
-      expect(@ride1.meet_requirements(@visitor1)).to be false
+      expect(@ride1.meet_requirements?(@visitor1)).to be false
     end
+    # add for true conditions
   end
 end
